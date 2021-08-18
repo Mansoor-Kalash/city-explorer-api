@@ -18,14 +18,15 @@ server.get('/getweather',(req,res)=>{
 
     let weather =  weatherD.find(element => {
 
-        if (element.city_name.toLowerCase() === req.query.cityName.toLowerCase()) {
+        if (element.city_name.toLowerCase() === city.toLowerCase()) {
         console.log('object :>> ', element);
            return element;
         }
 
     })
-return weather;
-    res.send(wether,"aaa");
+
+    res.send(weather);
+    console.log(weather);
 
 })
 
