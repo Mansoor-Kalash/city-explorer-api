@@ -12,8 +12,8 @@ const PORT = process.env.PORT;
 const server = express();
 server.use(cors());
 const weatherD = require('./data/weather.json');
-const getWeatherHandler = require('./weather.js')
-const getMoviData = require('./movies.js')
+const getWeatherHandler = require('./weather.js');
+const getMoviData = require('./movies.js');
 
 // ROUTES
 // lab-07

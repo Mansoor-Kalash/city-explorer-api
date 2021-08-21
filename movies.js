@@ -9,19 +9,20 @@ function getMoviData(req,res){
     try {
         axios.get(url).then((resultData)=>{
             console.log('movies',resultData);
-            let moviObj = resultData.data.results.map(element=>{
+            let moviObj =resultData.data.results.map(element=>{
                if (element.poster_path !== null) {
                 return new Movies (element);
                    
                }
             })
-            res.status(200).send(moviarr);
+            res.send(moviarr);
     
         })
     } catch (error) {
         console.log('error from axios', error)
         res.send(error)
     }
+}
         
     class Movies{
         constructor(moviesData){
@@ -31,6 +32,7 @@ function getMoviData(req,res){
             this.poster_path=moviesData.poster_path;
             this.popularity=moviesData.popularity;
             this.release_date=moviesData.release_date;
-            moviarr.push(this)  }
+            moviarr.push(this) 
+         }
     
     }
