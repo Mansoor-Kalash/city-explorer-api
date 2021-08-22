@@ -1,6 +1,5 @@
 "use strict";
 
-// https://api.themoviedb.org/3/search/movie?api_key=${MOVI_API_KEY}&query=${CITY}=&language=en-US
 
 const express = require("express");
 const cors = require("cors");
@@ -14,7 +13,7 @@ server.use(cors());
 const weatherD = require("./data/weather.json");
 const getWeatherHandler = require("./weather.js");
 const getMoviData = require("./movies.js");
-
+//
 // ROUTES
 // lab-07
 server.get("/getweather", (req, res) => {
